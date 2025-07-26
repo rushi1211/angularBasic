@@ -5,23 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PostComponent } from './components/post/post.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 const routes: Routes = [
-  { path: '', component: PostComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PostComponent
+    PostComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

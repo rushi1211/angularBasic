@@ -1,5 +1,6 @@
-import { HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PostService } from 'src/app/service/post.service';
 
 @Component({
   selector: 'app-post',
@@ -8,11 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private http: HttpClientModule){
+  postsList:any=[];
+
+  constructor(private post : PostService, private router:Router){
 
   }
 
   ngOnInit(): void {
-    
+    this.getAllPosts();
+  }
+  
+  getAllPosts(){
+    this.post.getAllPosts().subscribe((data)=>{
+      console.log(data)
+      this.postsList=data;
+    })
+  }
+  goToDetails(id:number){
+    this.router.navigate(['/postDetails', id])
   }
 }

@@ -1,1 +1,8 @@
-<p>post works!</p>
+
+<div class="row">
+   <ul> 
+    <li *ngFor="let post of postsList" (click)="goToDetails(post.id)" style="cursor: pointer">
+            <p>{{post.title}}</p>        
+    </li>
+  </ul>     
+</div>
