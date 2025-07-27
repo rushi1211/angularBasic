@@ -25,7 +25,16 @@ export class PostComponent implements OnInit {
       this.postsList=data;
     })
   }
+  addPost(){
+    this.router.navigate(['/createPost'])
+  }
   goToDetails(id:number){
     this.router.navigate(['/postDetails', id])
+  }
+  deletePost(id:number){
+    console.log(id)
+    this.post.deletePost(id).subscribe((data)=>{
+      this.getAllPosts()
+    })
   }
 }

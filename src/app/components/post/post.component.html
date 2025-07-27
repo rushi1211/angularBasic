@@ -1,8 +1,12 @@
 
-<div class="row">
+<div >
+    <button (click)="addPost()">Add Post</button>
    <ul> 
-    <li *ngFor="let post of postsList" (click)="goToDetails(post.id)" style="cursor: pointer">
-            <p>{{post.title}}</p>        
+    <li *ngFor="let post of postsList" >
+            <p (click)="goToDetails(post.id)" style="cursor: pointer">{{post.title}}</p>  
+            
+            <button>Edit</button>
+            <button (click)="deletePost(post.id)">Delete</button>
     </li>
   </ul>     
 </div>

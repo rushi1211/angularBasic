@@ -1,0 +1,11 @@
+<div>
+<form (ngSubmit)="saveData()" #postForm="ngForm">
+  <label>Title:</label>
+  <input type="text" name="title" [(ngModel)]="title" required />
+
+  <label>Body:</label>
+  <input type="text" name="body" [(ngModel)]="body" required />
+
+  <button type="submit" [disabled]="!postForm.form.valid">Submit</button>
+</form>
+</div>

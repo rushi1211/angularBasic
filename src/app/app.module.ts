@@ -8,6 +8,8 @@ import { PostComponent } from './components/post/post.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
 ];
@@ -17,13 +19,15 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     PostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
